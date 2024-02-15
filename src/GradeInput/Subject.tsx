@@ -14,7 +14,6 @@ export const Subject: React.FC<SubjectStudied> = ({
   bgColor,
 }) => {
   const navigate = useNavigate();
-
   const handleClick = () => {
     if (subject === "Math") {
       navigate("/grade/math");
@@ -29,11 +28,17 @@ export const Subject: React.FC<SubjectStudied> = ({
       onClick={handleClick}
       className={
         bgColor +
-        " flex aspect-square cursor-pointer flex-col items-center justify-center rounded-lg p-4 hover:shadow-lg"
+        " flex aspect-[4/5] cursor-pointer flex-col items-center rounded-lg p-4 hover:shadow-lg"
       }
     >
-      {icon}
-      <p className="font-sans text-base font-medium">{subject}</p>
+      <div className="flex h-1/3 w-full items-center justify-center">
+        <p className="text-medium font-sans font-bold">{subject}</p>
+      </div>
+      <div className="flex h-2/3 w-full">
+        <h1 className="flex h-full w-full items-center justify-center font-sans text-5xl font-bold">
+          10
+        </h1>
+      </div>
     </div>
   );
 };
